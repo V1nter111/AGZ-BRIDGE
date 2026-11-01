@@ -7,7 +7,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$hostBase = "http://localhost:$Port"
+$hostBase = "http://127.0.0.1:$Port"
 
 try {
     $health = Invoke-RestMethod -Uri "$hostBase/health" -TimeoutSec 3 -ErrorAction Stop
