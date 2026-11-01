@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agz-bridge"
+version = "1.0.0"
+description = "Autonomous bridge between Google Antigravity 2.0 CLI and Agent Zero"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "V1nter111" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.28.0",
+    "pydantic>=2.5.0",
+    "httpx>=0.27.0",
+    "sse-starlette>=2.0.0",
+    "cryptography>=42.0.0",
+    "psutil>=5.9.0",
+    "pyyaml>=6.0.1",
+]
+
+[project.scripts]
+agz-bridge = "agz_bridge.main:main"

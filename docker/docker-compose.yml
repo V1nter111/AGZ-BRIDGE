@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  agent-zero:
+    image: agent0ai/agent-zero:latest
+    container_name: agent-zero-worker
+    restart: unless-stopped
+    ports:
+      - "5080:80"
+    volumes:
+      - a0_usr:/a0/usr
+    environment:
+      - A0_SET_CHAT_MODEL=gemini-3.8-flash-high
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  a0_usr:
+    driver: local
